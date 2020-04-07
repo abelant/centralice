@@ -1,0 +1,446 @@
+
+
+
+
+<div class="ui-timepicker-container ui-timepicker-standard" style="top: 4990px; left: 107px; height: 211px; width: 798px; z-index: auto; cursor: default;"><div class="ui-timepicker ui-widget ui-widget-content ui-menu ui-corner-all" style="width: 790px;"><ul class="" style="width: 790px;"><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all ui-state-hover" id="ui-active-item">17:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">18:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">19:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">20:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">09:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">10:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">11:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">12:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">13:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">14:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">15:00</a></li><li class="ui-menu-item" style="width: 790px;"><a class="ui-corner-all">16:00</a></li></ul></div></div>
+
+
+
+
+
+
+
+<ul class="nav nav-tabs flex-nowrap" role="tablist">
+                                    <li role="presentation" class="nav-item">
+                                        <a href="#step1" class="nav-link active" data-toggle="tab" aria-controls="step1"
+                                            role="tab"> Post Code </a>
+                                    </li>
+                                    <li role="presentation" class="nav-item">
+                                        <a href="#step2" class="nav-link disabled" data-toggle="tab"
+                                            aria-controls="step2" role="tab"> Shipping </a>
+                                    </li>
+                                    <li role="presentation" class="nav-item">
+                                        <a href="#step3" class="nav-link disabled" data-toggle="tab"
+                                            aria-controls="step3" role="tab"> Order Inquiry </a>
+                                    </li>
+                                    <li role="presentation" class="nav-item">
+                                        <a href="#complete" class="nav-link disabled" data-toggle="tab"
+                                            aria-controls="complete" role="tab"> Complete </a>
+                                    </li>
+                                </ul>
+                                <form role="form">
+                                    <div class="tab-content py-2">
+                                        <div class="tab-pane active" role="tabpanel" id="step1">
+                                            <h3 style="padding-top:10px">Check your Post Code</h3>
+                                            <form>
+                                                <div class="form-group " style="padding-top:10px;">
+                                                <label >Post Code</label>
+
+                                                    <input type="text" class="form-control postCode" id="postCode"
+                                                        placeholder="Enter Post Code">
+                                                </div>
+                                            </form>
+                                            <button class="btn btn-primary next-step" id="next1"">Next</button>
+                                        </div>
+                                        <div class="tab-pane" role="tabpanel" id="step2">
+                                            <h3>Shipping</h3>
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput">Full Name</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                                        placeholder="Full Name">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput">Address Line 1</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                                        placeholder="Address Line 1">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="formGroupExampleInput2">Address Line 2</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput2"
+                                                        placeholder="Address Line 2">
+                                                </div>
+                                            </form>
+                                            <ul class="float-right">
+                                                <li class="list-inline-item">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary prev-step">Previous</button>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <button type="button" class="btn btn-primary next-step">Save and
+                                                        continue</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" role="tabpanel" id="step3">
+                                            <h3>Step 3</h3>
+                                            <p>This is step 3</p>
+                                            <ul class="float-right">
+                                                <li class="list-inline-item">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary prev-step">Previous</button>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-info-full next-step">Save and
+                                                        continue</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" role="tabpanel" id="complete">
+                                            <h3>Complete!</h3>
+                                            <p>You have successfully completed all steps.</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+
+                                $(function () {
+                                    $(".date1 .input").datetimepicker({
+                                        format: 'YYYY-MM-DD',
+                                    });
+                        
+                                    $(".date2 .input").datetimepicker({
+                                        format: 'HH:mm',
+                                        pickDate: false,
+                                        pickSeconds: false,
+                                        pick12HourFormat: false,
+                                        icons: {
+                                            up: "fa fa-arrow-up",
+                                            down: "fa fa-arrow-down"
+                                        }
+                                    });
+                                    $("#submitbtn").click(function (e) {
+                                        e.preventDefault();
+                                        var totalprice = 0;
+                                        var icecubes = parseInt($('#icecubes').val()) * 6;
+                                        var crushedice = parseInt($('#crushedice').val()) * 6;
+                                        var iceblock = parseInt($('#iceblock').val()) * 30;
+                                        var dryice = parseInt($('#dryice').val()) * 30;
+                                        totalprice = parseInt(icecubes) + parseInt(iceblock) + parseInt(dryice) + parseInt(
+                                            crushedice);
+                                        $('#nicecubes').val($('#icecubes').val());
+                                        $('#ncrushedice').val($('#crushedice').val());
+                                        $('#niceblocks').val($('#iceblock').val());
+                                        $('#ndryice').val($('#dryice').val());
+                                        $('#ntotal').val(totalprice);
+                                        var upload = document.getElementById("orderForm");
+                                        var upform_data = new FormData(upload);
+                                        $.ajax({
+                                            url: 'includes/submitorder.php',
+                                            type: 'POST',
+                                            contentType: false,
+                                            processData: false,
+                                            data: upform_data,
+                                            beforeSend: function () {
+                                                $(".loadingScreen").addClass('showit');
+                                            },
+                                            success: function (data) {
+                                                $(".loadingScreen").removeClass('showit');
+                                                var js = JSON.parse(data);
+                                                if (js.status == 1) {
+                                                    swal("Order Sent!", js.msg, 'success');
+                                                } else {
+                                                    swal("Oops!", js.msg, 'error');
+                                                }
+                                            }
+                                        });
+                        
+                                    });
+                                    $("#submitbtncontact").click(function (e) {
+                                        e.preventDefault();
+                                        var upload = document.getElementById("orderForm");
+                                        var upform_data = new FormData(upload);
+                                        $.ajax({
+                                            url: 'includes/submitcontact.php',
+                                            type: 'POST',
+                                            contentType: false,
+                                            processData: false,
+                                            data: upform_data,
+                                            beforeSend: function () {
+                                                $(".loadingScreen").addClass('showit');
+                                            },
+                                            success: function (data) {
+                                                $(".loadingScreen").removeClass('showit');
+                                                var js = JSON.parse(data);
+                                                if (js.status == 1) {
+                                                    swal("Message Sent!", js.msg, 'success');
+                                                } else {
+                                                    swal("Oops!", js.msg, 'error');
+                                                }
+                                            }
+                                        });
+                        
+                                    });
+                                });
+                        
+                                function icecubeMatrix(guests) {
+                                    event.preventDefault();
+                                    var guests = document.getElementById('inputGuests').value;
+                                    console.log("Guests : " + guests);
+                                    var serving = '';
+                                    var servingResult = '';
+                                    var cooling = '';
+                                    var coolingResult = '';
+                                    var coolingandserving = '';
+                                    var coolingandservingResult = '';
+                                    if (guests <= 50) {
+                                        serving = '1 x 12kg ';
+                                        servingResult = '1 * 12';
+                                        cooling = '3 x 12kg ';
+                                        coolingResult = '3 * 12';
+                                        coolingandserving = '4 x 12kg ';
+                                        coolingandservingResult = '4 * 12';
+                                        console.log(serving, servingResult, cooling, coolingResult, coolingandserving, coolingandservingResult);
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                        
+                                    } else if (guests <= 100) {
+                                        serving += '3 x 12kg ';
+                                        servingResult += '3 * 12';
+                                        cooling += '5 x 12kg ';
+                                        coolingResult += '5 * 12';
+                                        coolingandserving += '8 x 12kg ';
+                                        coolingandservingResult += '8 * 12';
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                                    } else if (guests <= 200) {
+                                        serving += '4 x 12kg ';
+                                        servingResult += '4 * 12';
+                                        cooling += '8 x 12kg ';
+                                        coolingResult += '8 * 12';
+                                        coolingandserving += '12 x 12kg ';
+                                        coolingandservingResult += '12 * 12';
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                        
+                                    } else if (guests <= 300) {
+                                        serving += '6 x 12kg ';
+                                        servingResult += '6 * 12';
+                                        cooling += '14 x 12kg ';
+                                        coolingResult += '14 * 12';
+                                        coolingandserving += '20 x 12kg ';
+                                        coolingandservingResult += '20 * 12';
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                        
+                                    } else if (guests <= 400) {
+                                        serving += '8 x 12kg ';
+                                        servingResult += '8 * 12';
+                                        cooling += '20 x 12kg ';
+                                        coolingResult += '20 * 12';
+                                        coolingandserving += '28 x 12kg ';
+                                        coolingandservingResult += '28 * 12';
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                        
+                                    } else if (guests <= 500) {
+                        
+                                        serving += '10 x 12kg ';
+                                        servingResult += '10 * 12';
+                                        cooling += '25 x 12kg ';
+                                        coolingResult += '25 * 12';
+                                        coolingandserving += '35 x 12kg ';
+                                        coolingandservingResult += '35 * 12';
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                        
+                                    } else if (guests <= 600) {
+                        
+                                        serving += '12 x 12kg ';
+                                        servingResult += '12 * 12';
+                                        cooling += '30 x 12kg ';
+                                        coolingResult += '30 * 12';
+                                        coolingandserving += '42 x 12kg ';
+                                        coolingandservingResult += '42 * 12';
+                                        document.getElementById('serving').textContent = serving;
+                                        //document.getElementById('servingCalculate').textContent = servingResult;
+                                        document.getElementById('cooling').textContent = cooling;
+                                        //document.getElementById('coolingCalculate').textContent = coolingResult;
+                                        document.getElementById('coolingserving').textContent = coolingandserving;
+                                        //document.getElementById('coolingandservingCalculate').textContent = coolingandservingResult;
+                                    }
+                                }
+                        
+                                function checkPostcode() {
+                                    event.preventDefault();
+                                    var postcode = document.getElementById('inputPostcode').value.toUpperCase();
+                                    var postCodeArray = postcode.split(" ");
+                                    var postCodesMerged = [];
+                                    //console.log("Postcode array " + postCodeArray);
+                        
+                                    /*Minimum width of postcode without space is 4*/
+                                    // If postcode is merged then the length of first part of postcode is length without 3 last digits
+                                    if (postCodeArray.length == 1 && postcode.length >= 4) {
+                                        postCodesMerged.push(postcode.substr(0, postcode.length - 3));
+                                    }
+                                    // Min order 20 pounds, regular ordeging - min 15 pounds
+                                    var postcodeWest = ["W1", "WC2", "WC1", "SW1", "NW1"]
+                                    // Min order 20 pounds, regular ordeging - min 15 pounds
+                                    var postcodesChelsea = ["SW3", "SW5", "SW6", "SW7", "SW10", "W2", "W8", "W11"];
+                                    var postcodesCity = ["EC1", "EC2", "EC3", "EC4", "E1", "SE1", "SE11", "N1", "SW8"];
+                                    // Locals
+                                    var locals = ["SW4", "SW8", "SW9", "SW11", "SW12", "SW13", "SW15", "SW17", "SW18"];
+                                    // Zone 1 - 20 ounds All orders over 10 bags
+                                    var zone1 = ["NW8", "SE5", "SE15", "SE17", "SW2", "SW14", "SW16", "SW19", "TW9", "TW10", "W4", "W6", "W9",
+                                        "W10", "W12", "W14"
+                                    ];
+                                    var zone2 = ["E2", "E14", "NW3", "NW5", "NW6", "SE8", "SE14", "SE16", "SE21", "SE22", "SE27"];
+                                    // If post code with space was typed in and the second part width is longer than 3 it means the postcode is wrong
+                                    if (postCodeArray.length > 1 && postCodeArray[1].length > 3) {
+                                        //console.log('no value');
+                                        document.getElementById('minorder').textContent = " ";
+                                        document.getElementById('regulardorder').textContent = " ";
+                                        document.getElementById('informationorder').textContent = " ";
+                                        document.getElementById('novalue').textContent =
+                                            "This is outside of our Central London delivery area. Please call us 020 7720 0011";
+                                        return;
+                                    }
+                                    if ((jQuery.inArray(postCodeArray[0], postcodesChelsea) >= 0) || (jQuery.inArray(postCodesMerged[0],
+                                            postcodesChelsea) >= 0)) {
+                                        // Min order 20
+                                        document.getElementById('minorder').textContent = "Min 4 bags (£26) per order";
+                                        document.getElementById('regulardorder').textContent = " ";
+                                        document.getElementById('informationorder').textContent = " ";
+                                        document.getElementById('novalue').textContent = "";
+                                        //console.log("postcodesChelsea");
+                        
+                                    } else if ((jQuery.inArray(postCodeArray[0], postcodesCity) >= 0) || (jQuery.inArray(postCodesMerged[0],
+                                            postcodesCity) >= 0)) {
+                                        document.getElementById('minorder').textContent = "Min 4 bags (£26) per order";
+                                        document.getElementById('regulardorder').textContent = " ";
+                                        document.getElementById('informationorder').textContent = " ";
+                                        document.getElementById('novalue').textContent = "";
+                                        //console.log("postcodesCity");
+                                    } else if ((jQuery.inArray(postCodeArray[0], postcodeWest) >= 0) || (jQuery.inArray(postCodesMerged[0],
+                                            postcodeWest) >= 0)) {
+                                        // Min order 10
+                                        console.log(postCodeArray[0]);
+                                        document.getElementById('minorder').textContent = "Min 2 bags (£13) per order";
+                                        document.getElementById('regulardorder').textContent = "";
+                                        document.getElementById('informationorder').textContent = "";
+                                        document.getElementById('novalue').textContent = "";
+                                        //console.log("postcodeWest");
+                                    } else if ((jQuery.inArray(postCodeArray[0], locals) >= 0) || (jQuery.inArray(postCodesMerged[0], locals) >=
+                                            0)) {
+                                        document.getElementById('minorder').textContent = "Min 4 bags (£26) per order";
+                                        document.getElementById('regulardorder').textContent = "";
+                                        document.getElementById('informationorder').textContent = "";
+                        
+                                        document.getElementById('novalue').textContent = "";
+                        
+                                        //console.log("Locals postcode");
+                                    } else if ((jQuery.inArray(postCodeArray[0], zone1) >= 0) || (jQuery.inArray(postCodesMerged[0], zone1) >=
+                                            0)) {
+                                        document.getElementById('minorder').textContent = "";
+                                        document.getElementById('regulardorder').textContent = "";
+                                        document.getElementById('informationorder').textContent = "";
+                                        document.getElementById('novalue').textContent =
+                                            "This is outside of our Central London delivery area. Please call us 020 7720 0011";
+                                    } else if ((jQuery.inArray(postCodeArray[0], zone2) >= 0) || (jQuery.inArray(postCodesMerged[0], zone2) >=
+                                            0)) {
+                                        document.getElementById('minorder').textContent = "";
+                                        document.getElementById('regulardorder').textContent = "";
+                                        document.getElementById('informationorder').textContent = "";
+                                        document.getElementById('novalue').textContent =
+                                            "This is outside of our Central London delivery area. Please call us 020 7720 0011";
+                                        //console.log("zone 2")
+                                    } else {
+                                        //console.log('no value');
+                                        document.getElementById('minorder').textContent = " ";
+                                        document.getElementById('regulardorder').textContent = " ";
+                                        document.getElementById('informationorder').textContent = " ";
+                                        document.getElementById('novalue').textContent =
+                                            "This is outside of our Central London delivery area. Please call us 020 7720 0011";
+                                    }
+                                }
+                                $(function () {
+                                    var totalprice = 0;
+                                    var icecubes = parseInt($('#icecubes').val()) * 6;
+                                    var iceblock = parseInt($('#iceblock').val()) * 30;
+                                    var dryice = parseInt($('#dryice').val()) * 30;
+                                    totalprice = parseInt(icecubes) + parseInt(iceblock) + parseInt(dryice);
+                                    $('.price-show').val('£' + totalprice);
+                                    $('.range_slider').on('input change', function () {
+                                        var totalprice = 0;
+                                        $('.range_slider').each(function () {
+                                            var rangeid = this.id;
+                                            if (rangeid == 'icecubes') {
+                                                $('#ice_cube_number').html(this.value);
+                                                totalprice = parseInt(this.value) * 6;
+                                            }
+                                            if (rangeid == 'iceblock') {
+                                                $('#ice_block_number').html(this.value);
+                                                totalprice = parseInt(totalprice) + (parseInt(this.value) * 30);
+                                            }
+                                            if (rangeid == 'dryice') {
+                                                $('#ice_dry_number').html(this.value);
+                                                totalprice = parseInt(totalprice) + (parseInt(this.value) * 30);
+                                            }
+                                            if (rangeid == 'crushedice') {
+                                                $('#ice_crushed_number').html(this.value);
+                                                totalprice = parseInt(totalprice) + (parseInt(this.value) * 6);
+                                            }
+                                        });
+                                        $('.price-show').val('£' + totalprice);
+                                    });
+                        
+                                    $('#image').click(function (event) {
+                                        event.preventDefault();
+                                        $('html,body').animate({
+                                                scrollTop: $("#contact-now").offset().top
+                                            },
+                                            'slow');
+                                        $('.contact_text').text($(this).attr('alt'));
+                                        document.getElementById("phone").style.display = "block";
+                                        document.getElementById("address").style.display = "block";
+                                        document.getElementById("ordernowbuttons").style.display = "block";
+                                        document.getElementById("scheduletime").style.display = "block";
+                                        document.getElementById("sendcontactus").style.display = "none";
+                                        document.getElementById("message").style.display = "none";
+                                    });
+                                    $('#cancel').click(function (event) {
+                                        event.preventDefault();
+                                        $('html,body').animate({
+                                                scrollTop: $("#contact-now").offset().top
+                                            },
+                                            'slow');
+                                        $('.contact_text').text('Contact Us');
+                                        document.getElementById("phone").style.display = "none";
+                                        document.getElementById("address").style.display = "none";
+                                        document.getElementById("ordernowbuttons").style.display = "none";
+                                        document.getElementById("scheduletime").style.display = "none";
+                        
+                                        document.getElementById("sendcontactus").style.display = "block";
+                                        document.getElementById("message").style.display = "block";
+                                    });
+                                })
+                      
+
+
+                                
